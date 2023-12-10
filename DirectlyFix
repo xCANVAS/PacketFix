@@ -1,0 +1,25 @@
+In EntityLivingBase:
+change
+        if (Math.abs(this.motionX) < 0.005) {
+            this.motionX = 0.0;
+        }
+
+        if (Math.abs(this.motionY) < 0.005) {
+            this.motionY = 0.0;
+        }
+
+        if (Math.abs(this.motionZ) < 0.005) {
+            this.motionZ = 0.0;
+        }
+to
+        if (Math.abs(this.motionX) < 0.003) {
+            this.motionX = 0.0;
+        }
+
+        if (Math.abs(this.motionY) < 0.003) {
+            this.motionY = 0.0;
+        }
+
+        if (Math.abs(this.motionZ) < 0.003) {
+            this.motionZ = 0.0;
+        }
