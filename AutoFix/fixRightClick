@@ -1,0 +1,47 @@
+In PacketFix.java
+    public static float fixRightClick() {
+        if (ViaMCP.getInstance().getVersion() == ViaMCP.PROTOCOL_VERSION) {
+            return 16.0F;
+        } else {
+            return 1.0F;
+        }
+    }
+
+in C08PacketPlayerBlockPlacement.java
+change
+      public void readPacketData(PacketBuffer buf) throws IOException {
+        this.position = buf.readBlockPos();
+        this.placedBlockDirection = buf.readUnsignedByte();
+        this.stack = buf.readItemStackFromBuffer();
+        this.facingX = (float)buf.readUnsignedByte() / 16.0F;
+        this.facingY = (float)buf.readUnsignedByte() / 16.0F;
+        this.facingZ = (float)buf.readUnsignedByte() / 16.0F;
+    }
+
+    public void writePacketData(PacketBuffer buf) throws IOException {
+        buf.writeBlockPos(this.position);
+        buf.writeByte(this.placedBlockDirection);
+        buf.writeItemStackToBuffer(this.stack);
+        buf.writeByte((int)(this.facingX * 16.0F));
+        buf.writeByte((int)(this.facingY * 16.0F));
+        buf.writeByte((int)(this.facingZ * 16.0F));
+    }
+
+to
+    public void readPacketData(PacketBuffer buf) throws IOException {
+        this.position = buf.readBlockPos();
+        this.placedBlockDirection = buf.readUnsignedByte();
+        this.stack = buf.readItemStackFromBuffer();
+        this.facingX = (float)buf.readUnsignedByte() / fixRightClick;
+        this.facingY = (float)buf.readUnsignedByte() / fixRightClick;
+        this.facingZ = (float)buf.readUnsignedByte() / fixRightClick;
+    }
+
+    public void writePacketData(PacketBuffer buf) throws IOException {
+        buf.writeBlockPos(this.position);
+        buf.writeByte(this.placedBlockDirection);
+        buf.writeItemStackToBuffer(this.stack);
+        buf.writeByte((int)(this.facingX * fixRightClick));
+        buf.writeByte((int)(this.facingY * fixRightClick));
+        buf.writeByte((int)(this.facingZ * fixRightClick));
+    }
