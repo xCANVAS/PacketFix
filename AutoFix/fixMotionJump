@@ -1,4 +1,4 @@
-//In PacketFix.java
+In PacketFix.java
 //fixMotionJump(EntityLivingBase)
     public static double fixMotionJump() {
         if (ViaMCP.getInstance().getVersion() == ViaMCP.PROTOCOL_VERSION) {
@@ -8,8 +8,8 @@
         }
     }
 
-//In EntityLivingBase.java
-//change
+In EntityLivingBase.java
+change
         if (Math.abs(this.motionX) < 0.005) {
             this.motionX = 0.0;
         }
@@ -21,7 +21,7 @@
         if (Math.abs(this.motionZ) < 0.005) {
             this.motionZ = 0.0;
         }
-//to
+to
         if (Math.abs(this.motionX) < Packetfix.fixMotionJump()) {
             this.motionX = 0.0D;
         }
