@@ -6,10 +6,3 @@ MotionJump(in EntityLivingBase.java)
 RightClick(in C08PacketPlayerBlockPlacement.java)
 Ladder(in BlockLadder.java)
 LilyPad(in BlockLilyPad.java)
-
-Determine whether the viaversion is enabled
-if (ViaMCP.getInstance().getVersion() == ViaMCP.PROTOCOL_VERSION) {
-    //If viaversion is disabled
-} else {
-    //If viaversion is enabled
-}
