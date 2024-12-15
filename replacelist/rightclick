@@ -21,7 +21,7 @@ public void readPacketData(PacketBuffer buf) throws IOException
         buf.writeByte((int)(this.facingZ * 16.0F));
     }
 
-to
+with
 public void readPacketData(PacketBuffer buf) throws IOException
     {
         this.position = buf.readBlockPos();
