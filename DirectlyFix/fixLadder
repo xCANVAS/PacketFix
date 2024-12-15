@@ -1,6 +1,6 @@
 in BlockLadder.java
 
-change
+replace
 public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
     {
         IBlockState iblockstate = worldIn.getBlockState(pos);
