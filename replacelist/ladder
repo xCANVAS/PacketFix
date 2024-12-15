@@ -30,7 +30,7 @@ public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
         }
     }
 
-to
+with
 public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
     {
         IBlockState iblockstate = worldIn.getBlockState(pos);
