@@ -13,7 +13,7 @@ replace
             this.motionZ = 0.0;
         }
 
-to
+with
         if (Math.abs(this.motionX) < 0.003) {
             this.motionX = 0.0;
         }
