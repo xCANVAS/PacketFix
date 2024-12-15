@@ -1,6 +1,6 @@
 In C08PacketPlayerBlockPlacement.java
 
-change
+replace
 public void readPacketData(PacketBuffer buf) throws IOException
     {
         this.position = buf.readBlockPos();
