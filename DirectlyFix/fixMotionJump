@@ -1,6 +1,6 @@
 In EntityLivingBase
 
-change
+replace
         if (Math.abs(this.motionX) < 0.005) {
             this.motionX = 0.0;
         }
