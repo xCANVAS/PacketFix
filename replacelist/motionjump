@@ -1,4 +1,4 @@
-In EntityLivingBase
+In EntityLivingBase.java
 
 replace
         if (Math.abs(this.motionX) < 0.005) {
